@@ -1,11 +1,13 @@
 # Lab 7: Structuring Data with Classes
 
-### **Objective**
+## Objective
 
 So far, we've been working with headlines as simple strings. This is fine, but as our data gets more complex, it's better to structure it. **Classes** are the perfect tool for this.
 
 The aim of this lab is to create a `Headline` class to hold not just the text of a headline, but also its source. We will then add behavior to this class.
 
+## Scenario: Headline Objects
+You'll represent each headline as a `Headline` object (with `text` and `source`) and then add methods that help you compute values like word counts.
 ---
 
 ## Starter code 
@@ -31,7 +33,7 @@ h = Headline(
 
 ---
 
-## **Step 1: Defining the `Headline` Class**
+## Task 1: Defining the `Headline` Class
 
 ### **Tasks**
 
@@ -63,7 +65,7 @@ h = Headline(
 
 ---
 
-## **Step 2: Adding a String Representation**
+## Task 2: Adding a String Representation
 
 ### **Tasks**
 
@@ -110,7 +112,7 @@ print(h)
 
 ---
 
-## **Step 3: Adding Behavior with a Method**
+## Task 3: Adding Behavior with a Method
 
 ### **Tasks**
 
@@ -157,7 +159,7 @@ print(h.get_word_count())
 
 ---
 
-## **Step 4: Refactoring Your Code to Use the Class** (Optional/Extension/After the course)
+## Task 4: Refactoring Your Code to Use the Class (Optional/Extension/After the course)
 
 ### **Tasks**
 
@@ -192,7 +194,30 @@ print(h.get_word_count())
 
 ---
 
-## **Common Issues to Watch Out For**
+## Example Interaction
+
+```
+Headline(text="General election: Labour and Tories clash over tax", source="BBC News")
+Word count: 8
+```
+
+---
+
+**You're done when** your `Headline` class stores `text` + `source`, prints a readable string (via `__str__`), and can compute a word count (via `get_word_count()`).
+
+---
+
+## Key Concepts Demonstrated
+
+- Classes and objects: bundling data + behavior together
+- Attributes: storing `text` and `source` on `self`
+- Special methods: `__init__` and `__str__`
+- Methods: writing `get_word_count()` to compute a value
+- `self`: accessing the current object inside methods
+
+---
+
+## Common Issues
 
 ### **Class Definition**
 
@@ -274,6 +299,11 @@ Create test headlines with different sources:
 **Complete code examples for all exercises are available in the `solutions/lab-07` folder.**
 
 - `solutions/headline_objects.py` - Complete solution with all class features
+
+---
+
+## Next Steps
+In the next lab, you'll learn how to organize your code using modules (splitting classes and logic across multiple files).
 
 ---
 

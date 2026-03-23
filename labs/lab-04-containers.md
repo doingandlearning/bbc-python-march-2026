@@ -1,18 +1,21 @@
 # Lab 4: Analyzing News Headlines
 
-The aim of this lab is to get comfortable working with lists, one of the most common data structures in Python. We'll use a list of BBC News headlines to perform some simple, real-world text analysis.
+## Objective
+In this lab, you'll get comfortable working with lists, one of the most common data structures in Python. You'll use a list of BBC News headlines to perform simple, real-world text analysis.
 
-This lab is made up of 4 steps:
-1. Start with a list of headlines
-2. Count the headlines
-3. Calculate the average headline length
-4. Find the most common topics
+## Scenario: BBC Headline Mini-Analysis
+Imagine you're doing quick analysis on a set of headlines:
+
+- Start with a list of headlines
+- Count headlines and compute average length
+- Search headlines for a keyword and report matches
+- Combine everything into one polished script
 
 ---
 
-## Step 1: Create a New File
+## Task 1: Create a New File
 
-**Your Task:** Set up your workspace for the news analysis lab.
+**Your task:** Set up your workspace for the news analysis lab.
 
 **What to do:**
 1. Create a new Python file called `news_analysis.py`
@@ -22,11 +25,21 @@ This lab is made up of 4 steps:
 - You should have an empty Python file ready to work with
 - The file should be named appropriately for this lab
 
+<details>
+<summary>Possible Solution for Task 1</summary>
+
+```python
+# news_analysis.py
+# (Start with an empty file; import requirements can come later if needed.)
+```
+
+</details>
+
 ---
 
-## Step 2: Start with a list of headlines
+## Task 2: Start with a list of headlines
 
-**Your Task:** Create a list of news headlines to work with.
+**Your task:** Create a list of news headlines to work with.
 
 **What to do:**
 1. Create a variable called `headlines`
@@ -51,7 +64,7 @@ This lab is made up of 4 steps:
 - Do you have a good variety of topics?
 
 <details>
-<summary>Possible list</summary>
+<summary>Possible Solution for Task 2</summary>
 
 ```python
 headlines = [
@@ -71,9 +84,9 @@ headlines = [
 
 ---
 
-## Step 3: Count the Headlines and Average Length
+## Task 3: Count the Headlines and Average Length
 
-**Your Task:** Analyze basic statistics about your headlines.
+**Your task:** Analyze basic statistics about your headlines.
 
 **What to do:**
 1. Count how many headlines you have in your list
@@ -96,11 +109,25 @@ headlines = [
 - Is the average word count reasonable?
 - Are your results displayed clearly?
 
+<details>
+<summary>Possible Solution for Task 3</summary>
+
+```python
+count = len(headlines)
+total_words = sum(len(h.split()) for h in headlines)
+average_words = total_words / count
+
+print(f"You have {count} headlines.")
+print(f"Average words per headline: {average_words:.2f}")
+```
+
+</details>
+
 ---
 
-## Step 4: Find the most common topics
+## Task 4: Find the most common topics
 
-**Your Task:** Create a search function to find headlines about specific topics.
+**Your task:** Create a search function to find headlines about specific topics.
 
 **What to do:**
 1. Ask the user what topic they want to search for
@@ -127,11 +154,26 @@ headlines = [
 - Does it handle capitalization correctly?
 - Are the results displayed clearly?
 
+<details>
+<summary>Possible Solution for Task 4</summary>
+
+```python
+topic = input("Enter a topic keyword: ").strip().lower()
+
+matches = [h for h in headlines if topic in h.lower()]
+
+print(f"Found {len(matches)} matching headlines:")
+for h in matches:
+    print("-", h)
+```
+
+</details>
+
 ---
 
 ## Putting It All Together
 
-**Final Challenge:** Make sure all parts work together smoothly.
+**Final challenge:** Make sure all parts work together smoothly.
 
 **What to do:**
 1. Test your complete program with different search terms
@@ -147,7 +189,32 @@ headlines = [
 
 ---
 
-## Checks for Understanding
+## Example Interaction
+
+```
+Enter a topic to search for (e.g. "new"): new
+Found 3 matching headlines:
+1. New David Hockney exhibition opens in London
+2. Science discovers new way to tackle plastic waste
+3. Debate rages over future of Artificial Intelligence
+```
+
+---
+
+**You're done when** your script can (1) compute the headline count and average word length, and (2) search headlines for a keyword and report how many matches were found.
+
+---
+
+## Key Concepts Demonstrated
+
+- Lists: storing multiple items (headlines)
+- Looping: processing each headline
+- String methods like `.split()` and (optionally) `.lower()` for case-insensitive matching
+- Search logic: finding matches by keyword
+
+---
+
+## Check your work
 
 Before moving to the next lab, make sure you can answer these questions:
 
@@ -170,30 +237,30 @@ Before moving to the next lab, make sure you can answer these questions:
 
 ---
 
-## Common Issues and Solutions
+## Common Issues
 
 ### Problem: "NameError: name 'headlines' is not defined"
-**Solution:** Make sure you've created your headlines list before trying to use it.
+**Fix:** Make sure you've created your headlines list before trying to use it.
 
 ### Problem: Average calculation gives 0 or wrong results
-**Solution:** Check that you're initializing your counter variable to 0 before the loop.
+**Fix:** Check that you're initializing your counter variable to 0 before the loop.
 
 ### Problem: Search doesn't find obvious matches
-**Solution:** Make sure you're using `.lower()` on both the headline and search term.
+**Fix:** Make sure you're using `.lower()` on both the headline and search term.
 
 ### Problem: Program crashes when searching
-**Solution:** Make sure you're properly handling the case where no matches are found.
+**Fix:** Make sure you're properly handling the case where no matches are found.
 
 ---
 
-## What's Next?
+## Next Steps
 
 In the next lab, you'll learn about:
 - More advanced list operations
 - Working with other container types (tuples, sets)
 - List comprehensions and advanced data processing
 
-**Ready to continue?** Move on to Lab 5: Advanced Container Operations!
+Move on to Lab 5: Advanced Container Operations!
 
 ---
 

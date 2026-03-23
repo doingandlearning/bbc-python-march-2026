@@ -1,18 +1,21 @@
 # Lab 5: Building a Headline Analysis Toolkit with Functions
 
-The aim of this lab is to practice writing functions to create a reusable, organized toolkit. We will refactor our previous headline analysis script into a set of functions that can be easily called and tested.
+## Objective
+In this lab, you'll practice writing functions to create a reusable, organized toolkit. You'll refactor your previous headline analysis script into functions that are easy to call and test.
 
-This lab is made up of 4 steps:
-1. Set up your script with the headline data.
-2. Write a function to get the length of a single headline.
-3. Write a function to search for headlines containing a keyword.
-4. Write a main `analyse_all_headlines` function that uses the other functions.
+## Scenario: Headline Toolkit with Functions
+You're building a small “headline analysis toolkit” by splitting the work into functions:
+
+- Set up the script with a headlines list
+- Write a function to count words in one headline
+- Write a function to search headlines by keyword
+- Write a main function that uses your helpers and prints results
 
 ---
 
-## Step 1: Getting Started
+## Task 1: Getting Started
 
-**Your Task:** Set up your workspace and prepare the headline data.
+**Your task:** Set up your workspace and prepare the headline data.
 
 **What to do:**
 1. Create a new Python file called `headline_analyzer.py`
@@ -45,11 +48,21 @@ headlines = [
 - Can you run the file without errors?
 - Are you ready to add functions?
 
+<details>
+<summary>Possible Solution for Task 1</summary>
+
+```python
+# headline_analyzer.py
+# Copy/paste the headlines list so it's available for the functions below.
+```
+
+</details>
+
 ---
 
-## Step 2: A Function to Get Word Count
+## Task 2: A Function to Get Word Count
 
-**Your Task:** Create a function that counts words in a single headline.
+**Your task:** Create a function that counts words in a single headline.
 
 **What to do:**
 1. Write a function called `get_word_count(headline_text)`
@@ -72,11 +85,21 @@ headlines = [
 - Does it return a number?
 - Can you test it with `print(get_word_count("This is a test headline"))`?
 
+<details>
+<summary>Possible Solution for Task 2</summary>
+
+```python
+def get_word_count(headline_text):
+    return len(headline_text.split())
+```
+
+</details>
+
 ---
 
-## Step 3: A Function to Find Headlines with a Keyword
+## Task 3: A Function to Find Headlines with a Keyword
 
-**Your Task:** Create a function that searches for headlines containing a specific keyword.
+**Your task:** Create a function that searches for headlines containing a specific keyword.
 
 **What to do:**
 1. Write a function called `find_headlines_with_keyword(list_of_headlines, keyword)`
@@ -102,11 +125,26 @@ headlines = [
 - Does it loop through the headlines?
 - Does it return the matching headlines?
 
+<details>
+<summary>Possible Solution for Task 3</summary>
+
+```python
+def find_headlines_with_keyword(list_of_headlines, keyword):
+    keyword = keyword.lower()
+    matches = []
+    for h in list_of_headlines:
+        if keyword in h.lower():
+            matches.append(h)
+    return matches
+```
+
+</details>
+
 ---
 
-## Step 4: A Main Analysis Function
+## Task 4: A Main Analysis Function
 
-**Your Task:** Create a main function that orchestrates the analysis and prints results.
+**Your task:** Create a main function that orchestrates the analysis and prints results.
 
 **What to do:**
 1. Write a function called `analyse_all_headlines(list_of_headlines)`
@@ -130,11 +168,23 @@ headlines = [
 - Does it calculate the average correctly?
 - Does it print the results clearly?
 
+<details>
+<summary>Possible Solution for Task 4</summary>
+
+```python
+def analyse_all_headlines(list_of_headlines):
+    total_words = sum(get_word_count(h) for h in list_of_headlines)
+    avg = total_words / len(list_of_headlines)
+    print(f"Average headline word count: {avg:.1f}")
+```
+
+</details>
+
 ---
 
 ## Tying It All Together
 
-**Your Task:** Call your functions to produce the final output.
+**Your task:** Call your functions to produce the final output.
 
 **What to do:**
 1. After defining all your functions, add code to call them
@@ -161,7 +211,34 @@ headlines = [
 
 ---
 
-## Checks for Understanding
+## Example Interaction
+
+```
+Average headline word count: 7.7
+Searching for keyword: new
+Found 3 matches:
+- New David Hockney exhibition opens in London
+- Science discovers new way to tackle plastic waste
+- Debate rages over future of Artificial Intelligence
+```
+
+---
+
+**You're done when** your program can (1) compute the average word count across headlines using functions, and (2) search for a keyword and print the matching headlines.
+
+---
+
+## Key Concepts Demonstrated
+
+- Defining functions: `def ...`
+- Parameters and arguments: passing data into functions
+- Return values: using `return` to produce a result
+- Reuse: calling helper functions inside a main orchestration function
+- Case-insensitive searching with `.lower()`
+
+---
+
+## Check your work
 
 Before moving to the next lab, make sure you can answer these questions:
 
@@ -184,30 +261,30 @@ Before moving to the next lab, make sure you can answer these questions:
 
 ---
 
-## Common Issues and Solutions
+## Common Issues
 
 ### Problem: "NameError: name 'get_word_count' is not defined"
-**Solution:** Make sure you've defined your function before trying to call it.
+**Fix:** Make sure you've defined your function before trying to call it.
 
 ### Problem: Function doesn't return anything
-**Solution:** Check that you're using the `return` keyword in your function.
+**Fix:** Check that you're using the `return` keyword in your function.
 
 ### Problem: Function parameters don't work
-**Solution:** Make sure your function definition matches how you're calling it.
+**Fix:** Make sure your function definition matches how you're calling it.
 
 ### Problem: Search function returns empty results
-**Solution:** Check that you're converting both the keyword and headline to lowercase.
+**Fix:** Check that you're converting both the keyword and headline to lowercase.
 
 ---
 
-## What's Next?
+## Next Steps
 
 In the next lab, you'll learn about:
 - More advanced function features
 - Working with different data types
 - Building larger, more complex programs
 
-**Ready to continue?** Move on to Lab 6: Advanced Functions!
+Move on to Lab 6: Advanced Functions!
 
 ---
 

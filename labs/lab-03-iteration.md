@@ -1,8 +1,10 @@
 # Lab 3: Iteration and Control Flow
 
-The aim of this lab is to create a simple guessing game. This will give you practice with `while` or `for` loops, `if/elif/else` statements, and handling user input.
+## Objective
+In this lab, you'll build a simple guessing game to practice iteration and control flow. You'll use loops, `if/elif/else`, and user input handling to guide a player toward the correct answer.
 
-The logic of the game is:
+## Scenario: Channel Number Guessing Game
+The program secretly chooses a number for a player to guess:
 
 - The program randomly selects a secret "channel number" between 1 and 50.
 - The player has a fixed number of attempts to guess it.
@@ -11,9 +13,9 @@ The logic of the game is:
 
 ---
 
-## Step 1: Setting up the Game
+## Task 1: Setting up the Game
 
-**Your Task:** Set up the basic structure for your guessing game.
+**Your task:** Set up the basic structure for your guessing game.
 
 **What to do:**
 
@@ -40,11 +42,26 @@ The logic of the game is:
 - Is your welcome message clear and helpful?
 - Does the program run without errors?
 
+<details>
+<summary>Possible Solution for Task 1</summary>
+
+```python
+import random
+
+secret_number = random.randint(1, 50)
+print("Welcome to the Channel Guessing Game!")
+print("I'm thinking of a number between 1 and 50.")
+attempts = 5
+print(f"You have {attempts} attempts.")
+```
+
+</details>
+
 ---
 
-## Step 2: The Game Loop
+## Task 2: The Game Loop
 
-**Your Task:** Create a loop that gives the player multiple attempts to guess.
+**Your task:** Create a loop that gives the player multiple attempts to guess.
 
 **What to do:**
 
@@ -68,11 +85,22 @@ The logic of the game is:
 - Does your loop run the right number of times?
 - Is the loop structure clear and readable?
 
+<details>
+<summary>Possible Solution for Task 2</summary>
+
+```python
+for attempt in range(attempts):
+    # put your guess-checking code inside this loop
+    pass
+```
+
+</details>
+
 ---
 
-## Step 3: Getting and Checking the User's Guess
+## Task 3: Getting and Checking the User's Guess
 
-**Your Task:** Add the core game logic inside your loop.
+**Your task:** Add the core game logic inside your loop.
 
 **What to do:**
 
@@ -101,11 +129,28 @@ The logic of the game is:
 - Are your feedback messages clear and helpful?
 - Does the game end when you guess correctly?
 
+<details>
+<summary>Possible Solution for Task 3</summary>
+
+```python
+guess = int(input(f"Attempt {attempt + 1} - enter your guess: "))
+
+if guess < secret_number:
+    print("Too low!")
+elif guess > secret_number:
+    print("Too high!")
+else:
+    print("Correct!")
+    break
+```
+
+</details>
+
 ---
 
-## Step 4: Handling a Win or Loss
+## Task 4: Handling a Win or Loss
 
-**Your Task:** Determine the final outcome and display appropriate messages.
+**Your task:** Determine the final outcome and display appropriate messages.
 
 **What to do:**
 
@@ -131,11 +176,27 @@ The logic of the game is:
 - Are the final messages clear and appropriate?
 - Does the program handle both outcomes correctly?
 
+<details>
+<summary>Possible Solution for Task 4</summary>
+
+```python
+won = False  # set to True when the guess is correct
+
+# ... inside Task 3 correct branch: won = True
+
+if won:
+    print("You guessed the secret number! Congratulations.")
+else:
+    print(f"Out of attempts. The secret number was {secret_number}.")
+```
+
+</details>
+
 ---
 
 ## Putting It All Together
 
-**Final Challenge:** Make sure all parts work together smoothly.
+**Final challenge:** Make sure all parts work together smoothly.
 
 **What to do:**
 
@@ -152,7 +213,39 @@ The logic of the game is:
 
 ---
 
-## Checks for Understanding
+## Example Interaction
+
+```
+Welcome to the Channel Guessing Game!
+You have 5 attempts to guess the secret number (between 1 and 50).
+
+Attempt 1 - enter your guess: 10
+Too low!
+
+Attempt 2 - enter your guess: 30
+Too high!
+
+Attempt 3 - enter your guess: 25
+Correct! You guessed the secret number!
+```
+
+---
+
+**You're done when** your program lets a player enter guesses, gives “too low / too high / correct” feedback, and stops immediately when the player guesses correctly (or prints the secret number when attempts run out).
+
+---
+
+## Key Concepts Demonstrated
+
+- `for`/`while` loops: repeating a section of code multiple times
+- `range(...)`: controlling how many attempts the player gets
+- `if/elif/else`: comparing guesses to the secret number
+- `break`: exiting a loop early when the player wins
+- `input()` + type conversion: turning user input text into a number
+
+---
+
+## Check your work
 
 Before moving to the next lab, make sure you can answer these questions:
 
@@ -178,27 +271,27 @@ Before moving to the next lab, make sure you can answer these questions:
 
 ---
 
-## Common Issues and Solutions
+## Common Issues
 
 ### Problem: "NameError: name 'random' is not defined"
 
-**Solution:** Make sure you've imported the random module at the top of your file.
+**Fix:** Make sure you've imported the `random` module at the top of your file.
 
 ### Problem: "ValueError: invalid literal for int()"
 
-**Solution:** The user entered something that's not a number. Think about how to handle this gracefully.
+**Fix:** The user entered something that's not a number. Think about how to handle this gracefully.
 
 ### Problem: Game doesn't end when guessing correctly
 
-**Solution:** Make sure you're using `break` when the guess is correct.
+**Fix:** Make sure you're using `break` when the guess is correct.
 
 ### Problem: Loop runs too many or too few times
 
-**Solution:** Check your `range()` function - remember it starts at 0.
+**Fix:** Check your `range()` function - remember it starts at 0.
 
 ---
 
-## What's Next?
+## Next Steps
 
 In the next lab, you'll learn about:
 
@@ -206,7 +299,7 @@ In the next lab, you'll learn about:
 - More complex data structures
 - Processing collections of data
 
-**Ready to continue?** Move on to Lab 4: Container Types!
+Move on to Lab 4: Container Types!
 
 ---
 

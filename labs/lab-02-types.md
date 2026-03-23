@@ -1,20 +1,21 @@
 # Lab 2: Types
 
-The aim of this lab is to extend our hello world application to make it interactive and to handle different types of data.
+## Objective
+In this lab, you'll extend your hello world application to be interactive and to handle different types of data (strings, numbers, and `None`). You'll practice `input()`, type conversion, variables, and working with types.
 
-This lab is comprised of 5 steps:
+## Scenario: Interactive Data Entry
+You're building simple interactive programs that collect user input and display results. The goal is to handle:
 
-1. Make the application interactive
-2. Input some numbers
-3. Inputting some strings
-4. Concatenating numbers and strings
-5. Working with / Using the `None` value
+- names (strings)
+- numbers (ints/floats)
+- concatenation (combining strings, and converting types when needed)
+- optional values using `None`
 
 ---
 
-## Step 1: Make the Application Interactive
+## Task 1: Make the Application Interactive
 
-**Your Task:** Modify your program to take user input as shown in the lecture slides.
+**Your task:** Modify your program to take user input as shown in the lecture slides.
 
 **What to do:**
 
@@ -46,11 +47,22 @@ Welcome John
 
 **Check your work:** Run the program and test it with different names. Does it work as expected?
 
+<details>
+<summary>Possible Solution for Task 1</summary>
+
+```python
+print("Hello World!")
+name = input("Please enter your name: ")
+print("Welcome", name)
+```
+
+</details>
+
 ---
 
-## Step 2: Input Some Numbers
+## Task 2: Input Some Numbers
 
-**Your Task:** Create a program that asks for two numbers and performs calculations.
+**Your task:** Create a program that asks for two numbers and performs calculations.
 
 **What to do:**
 
@@ -86,11 +98,24 @@ The type of the value is <class 'int'>
 
 **Check your work:** Test with different numbers. What happens if you enter letters instead of numbers?
 
+<details>
+<summary>Possible Solution for Task 2</summary>
+
+```python
+first = int(input("Please enter a number: "))
+second = int(input("Please enter another number: "))
+result = first + second
+print(f"The result of {first} + {second} is {result}")
+print(f"The type of the value is {type(result)}")
+```
+
+</details>
+
 ---
 
-## Step 3: Input Two Strings
+## Task 3: Input Two Strings
 
-**Your Task:** Create a program that works with string input and concatenation.
+**Your task:** Create a program that works with string input and concatenation.
 
 **What to do:**
 
@@ -123,11 +148,24 @@ The type of the value is <class 'str'>
 
 **Check your work:** Does the concatenation work as expected? What type is the result?
 
+<details>
+<summary>Possible Solution for Task 3</summary>
+
+```python
+first_string = input("Please enter a string: ")
+second_string = input("Please enter another string: ")
+combined_value = first_string + second_string
+print("The new value is", combined_value)
+print(f"The type of the value is {type(combined_value)}")
+```
+
+</details>
+
 ---
 
-## Step 4: Concatenate a Number and a String
+## Task 4: Concatenate a Number and a String
 
-**Your Task:** Explore what happens when you try to combine different data types.
+**Your task:** Explore what happens when you try to combine different data types.
 
 **What to do:**
 
@@ -158,11 +196,22 @@ The title of this app is Data Processing App Version 1.0
 
 **Check your work:** Does the concatenation work when you convert the number to a string? What error do you get if you don't convert?
 
+<details>
+<summary>Possible Solution for Task 4</summary>
+
+```python
+version = 1.0
+title = "Data Processing App Version " + str(version)
+print(f"The title of this app is {title}")
+```
+
+</details>
+
 ---
 
-## Step 5: Using `None`
+## Task 5: Using `None`
 
-**Your Task:** Explore the special `None` value and understand its purpose.
+**Your task:** Explore the special `None` value and understand its purpose.
 
 **What to do:**
 
@@ -191,11 +240,23 @@ The type of the user: <class 'NoneType'>
 
 **Check your work:** Does your program correctly identify when a variable is `None`? What type does it show?
 
+<details>
+<summary>Possible Solution for Task 5</summary>
+
+```python
+user = None
+print("user:", user)
+print("user is None:", user is None)
+print("The type of the user:", type(user))
+```
+
+</details>
+
 ---
 
 ## Putting It All Together
 
-**Final Challenge:** Create a comprehensive program that demonstrates all the concepts you've learned.
+**Final challenge:** Create a comprehensive program that demonstrates all the concepts you've learned.
 
 **What to do:**
 
@@ -217,7 +278,36 @@ The type of the user: <class 'NoneType'>
 
 ---
 
-## Checks for Understanding
+## Example Interaction
+
+```
+Hello World! (or your welcome message)
+Please enter your name: Alex
+Welcome Alex
+
+Please enter a number: 2
+Please enter another number: 3
+The result of 2 + 3 is 5
+The type of the value is <class 'int'>
+```
+
+---
+
+**You're done when** your program prompts for input (name, numbers, and strings), performs the type conversions needed for maths/concatenation, and demonstrates a `None` value with `is None` checks.
+
+---
+
+## Key Concepts Demonstrated
+
+- `input()` returns strings, so you may need `int()` / `float()` conversions
+- String concatenation with `+` (and converting numbers with `str(...)`)
+- Using variables to store and reuse values
+- Inspecting types with `type(...)`
+- Comparing to `None` using `is None` / `is not None`
+
+---
+
+## Check your work
 
 Before moving to the next lab, make sure you can answer these questions:
 
@@ -243,23 +333,23 @@ Before moving to the next lab, make sure you can answer these questions:
 
 ---
 
-## Common Issues and Solutions
+## Common Issues
 
 ### Problem: "TypeError: can only concatenate str (not "int") to str"
 
-**Solution:** Convert the number to a string first using `str(number)`
+**Fix:** Convert the number to a string first using `str(number)`
 
 ### Problem: "ValueError: invalid literal for int()"
 
-**Solution:** The user entered something that's not a number. Add error handling.
+**Fix:** The user entered something that's not a number. Add error handling.
 
 ### Problem: Program crashes when user enters invalid input
 
-**Solution:** Use `try...except` blocks to handle errors gracefully.
+**Fix:** Use `try...except` blocks to handle errors gracefully.
 
 ---
 
-## What's Next?
+## Next Steps
 
 In the next lab, you'll learn about:
 
@@ -267,7 +357,7 @@ In the next lab, you'll learn about:
 - Repeating actions (loops)
 - More complex program flow
 
-**Ready to continue?** Move on to Lab 3: Flow Control!
+Move on to Lab 3: Flow Control!
 
 ---
 

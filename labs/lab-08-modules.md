@@ -1,10 +1,12 @@
 # Lab 8: Organizing Your Code with Modules
 
-### **Objective**
+## Objective
 As your projects grow, putting all your code in one file becomes messy. **Modules** allow you to organize your code into separate files, making it cleaner, more reusable, and easier to manage.
 
 The aim of this lab is to split our headline analysis tool into two modules: one to define the `Headline` class, and another to run the main analysis.
 
+## Scenario: Separating Code with Modules
+You'll move the `Headline` class into `headline_module.py`, then use it from `main_analysis.py` to run the analysis in a clean, importable way.
 ---
 
 ## **What are Modules?**
@@ -20,7 +22,7 @@ A **module** is a Python file that can be imported and used in other Python file
 
 ---
 
-## **Step 1: Create a `headline_module.py`**
+## Task 1: Create a `headline_module.py`
 
 ### **Tasks**
 1. Create a new file named `headline_module.py`
@@ -49,7 +51,7 @@ A **module** is a Python file that can be imported and used in other Python file
 
 ---
 
-## **Step 2: Create a `main_analysis.py`**
+## Task 2: Create a `main_analysis.py`
 
 ### **Tasks**
 1. Create a second new file, `main_analysis.py`
@@ -80,7 +82,7 @@ A **module** is a Python file that can be imported and used in other Python file
 
 ---
 
-## **Step 3: Using `if __name__ == "__main__"`**
+## Task 3: Using `if __name__ == "__main__"` 
 
 ### **Tasks**
 1. Wrap your script's logic in a `main()` function
@@ -110,7 +112,30 @@ A **module** is a Python file that can be imported and used in other Python file
 
 ---
 
-## **Common Issues to Watch Out For**
+## Example Interaction
+
+```
+In main_analysis.py:
+from headline_module import Headline
+
+When imported, the analysis should not run automatically.
+```
+
+---
+
+**You're done when** `main_analysis.py` runs the analysis, `headline_module.py` contains only the class, and importing `main_analysis.py` doesn't trigger the analysis.
+
+---
+
+## Key Concepts Demonstrated
+
+- Modules: importing code from separate files
+- `from ... import ...`: bringing classes into another file
+- `if __name__ == "__main__"`: controlling “run as script” vs “import”
+
+---
+
+## Common Issues
 
 ### **Import Errors**
 - **File not found**: Make sure both files are in the same directory
@@ -183,6 +208,11 @@ A **module** is a Python file that can be imported and used in other Python file
 
 - `solutions/headline_module.py` - Module containing the Headline class
 - `solutions/main_analysis.py` - Main script that imports and uses the class
+
+---
+
+## Next Steps
+In the next lab, you'll learn how to add more resilience to your programs with error handling.
 
 ---
 

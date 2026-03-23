@@ -1,9 +1,18 @@
 # Lab 6: Supercharging Analysis with List Comprehensions
 
-### **Objective**
-The aim of this lab is to use **list comprehensions** to perform powerful data manipulation on the headlines list in a single, readable line of code. This is a very common and powerful technique in Python.
+## Objective
+In this lab, you'll use **list comprehensions** to perform powerful data manipulation on the headlines list in a single, readable line of code. This is a very common and powerful technique in Python.
 
 ---
+
+## Scenario: Headlines Processed with One-Liners
+You have a list of headlines, and you want to quickly derive useful results from it:
+
+- word counts for each headline
+- a filtered list of “short” headlines
+- word counts for headlines that contain a specific keyword
+
+List comprehensions help you do this in a compact, readable way.
 
 ## **What are List Comprehensions?**
 A **list comprehension** is a concise way to create lists by applying operations to existing data. Think of it as a "for loop in one line" that's both readable and efficient.
@@ -16,7 +25,7 @@ A **list comprehension** is a concise way to create lists by applying operations
 
 ---
 
-## **Step 1: Getting Started**
+## Task 1: Getting Started
 
 ### **Tasks**
 1. Create a new Python file, e.g., `comprehensions_analysis.py`
@@ -33,9 +42,19 @@ A **list comprehension** is a concise way to create lists by applying operations
 - Does it contain all 10 headlines?
 - Is your file ready for the next steps?
 
+<details>
+<summary>Possible Solution for Task 1</summary>
+
+```python
+# Create `comprehensions_analysis.py`
+# Make sure `headlines` is defined and can be printed.
+```
+
+</details>
+
 ---
 
-## **Step 2: Mapping with List Comprehensions**
+## Task 2: Mapping with List Comprehensions
 
 A list comprehension is a great way to create a new list by applying an operation to every item in an existing list.
 
@@ -65,7 +84,7 @@ A list comprehension is a great way to create a new list by applying an operatio
 
 ---
 
-## **Step 3: Filtering with List Comprehensions**
+## Task 3: Filtering with List Comprehensions
 
 Now, let's use a list comprehension to select only the items that meet a certain criteria.
 
@@ -95,7 +114,7 @@ Now, let's use a list comprehension to select only the items that meet a certain
 
 ---
 
-## **Step 4: Combining Mapping and Filtering**
+## Task 4: Combining Mapping and Filtering
 
 This is where list comprehensions really shine. You can filter a list and transform the results in a single, elegant line.
 
@@ -125,7 +144,30 @@ This is where list comprehensions really shine. You can filter a list and transf
 
 ---
 
-## **Common Issues to Watch Out For**
+## Example Interaction
+
+```
+headline_lengths: [8, 4, 8, 10, 7, 8, 6, 8, 7, 9]
+short_headlines (<= 7 words): [...]
+specific_headline_lengths (contains "new"): [...]
+```
+
+---
+
+**You're done when** your program creates the lists for all tasks using list comprehensions and your printed results match what you expect.
+
+---
+
+## Key Concepts Demonstrated
+
+- List comprehensions syntax: `[expression for item in list if condition]`
+- Mapping: transforming each headline into a word count
+- Filtering: keeping only short headlines
+- Combining map + filter: deriving results in one line
+
+---
+
+## Common Issues
 
 ### **Syntax Errors**
 - **Missing brackets**: List comprehensions must be enclosed in `[]`
@@ -192,6 +234,11 @@ Make sure your headlines list contains exactly these 10 headlines:
 **Complete code examples for all exercises are available in the `solutions/lab-06` folder.**
 
 - `solutions/comprehensions_analysis.py` - Complete solution with all steps
+
+---
+
+## Next Steps
+In the next lab, you'll learn how to structure your data more cleanly using classes.
 
 ---
 
