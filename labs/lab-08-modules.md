@@ -49,6 +49,21 @@ A **module** is a Python file that can be imported and used in other Python file
 - Are there any headline objects or analysis code in this file?
 - Can you see all the methods (`__init__`, `__str__`, `get_word_count`)?
 
+<details>
+<summary>Possible Solution for Task 1</summary>
+
+```python
+# headline_module.py
+class Headline:
+    def __init__(self, text, source):
+        self.text = text
+        self.source = source
+    # def __str__(self): ...
+    # def get_word_count(self): ...
+```
+
+</details>
+
 ---
 
 ## Task 2: Create a `main_analysis.py`
@@ -80,6 +95,22 @@ A **module** is a Python file that can be imported and used in other Python file
 - Are the results the same as your previous lab?
 - Does the import statement appear at the top of the file?
 
+<details>
+<summary>Possible Solution for Task 2</summary>
+
+```python
+# main_analysis.py
+from headline_module import Headline
+
+headlines = [
+    Headline("Some headline", "BBC News"),
+]
+
+# Create objects, then run your analysis logic.
+```
+
+</details>
+
 ---
 
 ## Task 3: Using `if __name__ == "__main__"` 
@@ -109,6 +140,20 @@ A **module** is a Python file that can be imported and used in other Python file
 - Does the script still run and show results?
 - Can you import the file without running the analysis?
 - Is the code structure cleaner and more organized?
+
+<details>
+<summary>Possible Solution for Task 3</summary>
+
+```python
+def main():
+    # call your analysis code here
+    ...
+
+if __name__ == "__main__":
+    main()
+```
+
+</details>
 
 ---
 

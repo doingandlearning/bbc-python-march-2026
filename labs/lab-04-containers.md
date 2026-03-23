@@ -253,6 +253,15 @@ Before moving to the next lab, make sure you can answer these questions:
 
 ---
 
+## Extension Ideas (Optional)
+If you finish early, extend your list + string analysis (without introducing new topics):
+
+1. Add a “top/bottom” section: print the 3 longest and 3 shortest headlines (by word count).
+2. Support multiple search keywords: ask for keywords separated by commas and show matches per keyword.
+3. Add a simple “summary” output: show total headline count, average length, and search-match counts in one block.
+
+---
+
 ## Next Steps
 
 In the next lab, you'll learn about:

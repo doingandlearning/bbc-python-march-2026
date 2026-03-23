@@ -277,6 +277,15 @@ Before moving to the next lab, make sure you can answer these questions:
 
 ---
 
+## Extension Ideas (Optional)
+If you finish early, extend your functions while staying focused on the lab’s toolkit:
+
+1. Add a helper like `get_average_word_count(list_of_headlines)` that returns a value instead of printing it.
+2. Update your keyword search to return both matches and the match count (and then print them cleanly).
+3. Add a small formatting helper so your printed output looks consistent and readable.
+
+---
+
 ## Next Steps
 
 In the next lab, you'll learn about:

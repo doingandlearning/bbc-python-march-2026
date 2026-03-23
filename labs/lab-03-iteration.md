@@ -291,6 +291,15 @@ Before moving to the next lab, make sure you can answer these questions:
 
 ---
 
+## Extension Ideas (Optional)
+If you finish early, extend the same guessing-game logic:
+
+1. Add a “distance hint”: after each guess, print whether the guess is within (for example) 5 numbers of the secret.
+2. Let the player choose the number of attempts at the start (still using loops and the same feedback messages).
+3. Track and print how many guesses the player took when they win.
+
+---
+
 ## Next Steps
 
 In the next lab, you'll learn about:

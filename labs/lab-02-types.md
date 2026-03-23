@@ -349,6 +349,15 @@ Before moving to the next lab, make sure you can answer these questions:
 
 ---
 
+## Extension Ideas (Optional)
+If you finish early, try extending the ideas you already used in Tasks 1–5:
+
+1. Add float support: ask for a decimal number (use `float(...)`) and display its type.
+2. Add a `None`-aware message: print different text depending on whether a variable is `None`.
+3. Experiment with formatting: create a version number and display it using an `f-string` (and compare `type(...)` before/after formatting).
+
+---
+
 ## Next Steps
 
 In the next lab, you'll learn about:

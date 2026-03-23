@@ -12,6 +12,9 @@ You’ll practise:
 - using `continue`
 - (optional) separating input logic into a helper function
 
+## Scenario: A Checkout That Must Keep Working
+You’re building a small command-line checkout app. Users will type things (and sometimes they will type garbage), so your job is to keep the program running by handling parsing errors and validating ranges.
+
 ---
 
 ## Setup
@@ -35,7 +38,7 @@ The user will:
 
 ---
 
-## Step 1: Get it working (no error handling yet)
+## Task 1: Get it working (no error handling yet)
 
 ### Your task
 
@@ -50,7 +53,7 @@ The user will:
 A working checkout that crashes if input is bad.
 
 <details>
-<summary>Starter code for <code>lab_09_checkout.py if you want to get straight to error handlings.</code></summary>
+<summary>Possible Solution for Task 1 (starter program)</summary>
 
 ```python
 items = [
@@ -62,7 +65,7 @@ items = [
 ]
 
 total = 0.0
-purchases = []  # You will use this later for the receipt (Step 4)
+purchases = []  # You will use this later for the receipt (Task 4)
 
 print("Welcome to the Fault-Tolerant Checkout")
 print("Type 'done' at any time at the item prompt to finish.\n")
@@ -110,7 +113,7 @@ print(f"Total: £{total:.2f}")
 
 ---
 
-## Step 2: Stop crashes from bad numbers
+## Task 2: Stop crashes from bad numbers
 
 ### Your task
 
@@ -129,9 +132,29 @@ Wrap the risky conversions in `try...except` so the program **never crashes** wh
 
 Users can type anything and the program keeps going.
 
+<details>
+<summary>Possible Solution for Task 2</summary>
+
+```python
+# Wrap the parsing in try/except so you can continue looping.
+try:
+    choice_num = int(choice)
+except ValueError:
+    print("Menu choice must be a whole number.\n")
+    continue
+
+try:
+    quantity = int(qty_text)
+except ValueError:
+    print("Quantity must be a whole number.\n")
+    continue
+```
+
+</details>
+
 ---
 
-## Step 3: Validate ranges and meaning
+## Task 3: Validate ranges and meaning
 
 Error handling catches “can’t parse”, but not “doesn’t make sense”.
 
@@ -152,9 +175,29 @@ If a check fails:
 
 The checkout is robust and sensible.
 
+<details>
+<summary>Possible Solution for Task 3</summary>
+
+```python
+# After you've parsed choice_num and quantity:
+if choice_num < 1 or choice_num > 5:
+    print("Choose a menu number between 1 and 5.\n")
+    continue
+
+if quantity < 1:
+    print("Quantity must be >= 1.\n")
+    continue
+
+if quantity > 20:  # optional cap to avoid typos
+    print("Quantity is too large (max 20).\n")
+    continue
+```
+
+</details>
+
 ---
 
-## Step 4: Produce a receipt
+## Task 4: Produce a receipt
 
 ### Your task
 
@@ -175,9 +218,30 @@ At the end, print something like:
 - Cake x1 = £3.25
   Total = £10.25
 
+<details>
+<summary>Possible Solution for Task 4</summary>
+
+```python
+# While looping, store each purchase.
+# Example shape of each entry:
+# {"name": ..., "unit_price": ..., "quantity": ..., "line_total": ...}
+purchases.append({
+    "name": chosen_item["name"],
+    "unit_price": chosen_item["price"],
+    "quantity": quantity,
+    "line_total": line_total,
+})
+
+# After the loop, print a simple receipt from `purchases`.
+for p in purchases:
+    print(f"{p['name']} x{p['quantity']} = £{p['line_total']:.2f}")
+```
+
+</details>
+
 ---
 
-## Step 5: Add one “real world” feature (pick one)
+## Task 5: Add one “real world” feature (pick one)
 
 Pick **one**:
 
@@ -206,9 +270,56 @@ Ask:
 - “How many people?” (must be integer >=1)
   Print per-person cost.
 
+<details>
+<summary>Possible Solution for Task 5</summary>
+
+```python
+# Example (Option A - discount codes):
+code = input("Enter discount code or press Enter: ").strip().upper()
+
+if code == "SAVE10":
+    discount = 0.10 * total
+elif code == "FIVER":
+    discount = min(5.00, total)
+else:
+    discount = 0.0  # invalid/blank code
+
+total = max(0.0, total - discount)
+```
+
+</details>
+
 ---
 
-## Testing scenarios
+## Example Interaction
+
+```
+Choose an item number (1-5) or type 'done': hello
+Menu choice must be a whole number.
+
+Choose an item number (1-5) or type 'done': 2
+How many Tea? ten
+Quantity must be a whole number.
+```
+
+---
+
+**You're done when** your checkout never crashes on bad input, validates item numbers and quantities, loops until `done`, and prints a sensible total/receipt.
+
+---
+
+## Key Concepts Demonstrated
+
+- `try...except` with `ValueError`
+- Range checks + `continue` to re-prompt
+- Building a `purchases` list for a receipt
+- Optional features based on extra user input
+
+---
+
+## Check your work
+
+### Testing scenarios
 
 Try these inputs during the lab:
 
@@ -231,12 +342,17 @@ Expected:
 
 ---
 
-## Common mistakes to watch for
+## Common Issues
 
 - Catching `except:` instead of specific exceptions
 - Putting _too much_ inside `try` (keep it minimal)
 - Forgetting to `continue` after an error
 - Handling parse errors but forgetting range validation
+
+---
+
+## Next Steps
+In the next lab, you'll learn how to lock in behavior with automated tests using `pytest`.
 
 ---
 

@@ -63,6 +63,18 @@ h = Headline(
 - Does the object store both the text and source?
 - Can you access the attributes with `object.text` and `object.source`?
 
+<details>
+  <summary>Possible Solution for Task 1</summary>
+
+```python
+class Headline:
+    def __init__(self, text, source):
+        self.text = text
+        self.source = source
+```
+
+</details>
+
 ---
 
 ## Task 2: Adding a String Representation

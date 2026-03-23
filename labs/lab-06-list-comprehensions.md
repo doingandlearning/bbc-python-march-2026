@@ -82,6 +82,16 @@ A list comprehension is a great way to create a new list by applying an operatio
 - Is the second number 4 (for "England crowned T20 world champions")?
 - Can you verify a few more word counts manually?
 
+<details>
+<summary>Possible Solution for Task 2</summary>
+
+```python
+headline_lengths = [len(h.split()) for h in headlines]
+print(headline_lengths)
+```
+
+</details>
+
 ---
 
 ## Task 3: Filtering with List Comprehensions
@@ -112,6 +122,16 @@ Now, let's use a list comprehension to select only the items that meet a certain
 - Can you manually count words to verify the filtering worked?
 - Are you getting the expected headlines?
 
+<details>
+<summary>Possible Solution for Task 3</summary>
+
+```python
+short_headlines = [h for h in headlines if len(h.split()) <= 7]
+print(short_headlines)
+```
+
+</details>
+
 ---
 
 ## Task 4: Combining Mapping and Filtering
@@ -141,6 +161,20 @@ This is where list comprehensions really shine. You can filter a list and transf
 - Do all the word counts correspond to headlines with "new"?
 - Can you manually verify which headlines contain "new"?
 - Are you getting the expected word counts?
+
+<details>
+<summary>Possible Solution for Task 4</summary>
+
+```python
+specific_headline_lengths = [
+    len(h.split())
+    for h in headlines
+    if "new" in h.lower()
+]
+print(specific_headline_lengths)
+```
+
+</details>
 
 ---
 

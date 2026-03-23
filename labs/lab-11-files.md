@@ -1,9 +1,14 @@
 # Lab 11: Reading Data From a File
 
-### **Objective**
-Our program is great, but having the data hard-coded inside the script is inflexible. Real-world programs almost always load their data from external files.
+## Objective
+Our program is great, but having the data hard-coded inside the script is inflexible. Real-world programs almost always load data from external files.
 
-The aim of this lab is to modify our program to read headlines from the `headlines.csv` file using Python's built-in `csv` module.
+In this lab, you'll modify your program to read headlines from `headlines.csv` using Python's built-in `csv` module.
+
+---
+
+## Scenario: Loading Real Data from CSV
+Instead of manually keeping a headlines list inside your Python file, you'll read it from `headlines.csv`, turn each row into a `Headline` object, and let the rest of your analysis code work with the loaded data.
 
 ---
 
@@ -21,7 +26,7 @@ The aim of this lab is to modify our program to read headlines from the `headlin
 
 ---
 
-## **Step 1: Getting Started**
+## Task 1: Getting Started
 
 ### **Tasks**
 1. Import the csv module in your script
@@ -48,9 +53,23 @@ The aim of this lab is to modify our program to read headlines from the `headlin
 - Is there an empty `headlines = []` list in your main function?
 - Can you see the `headlines.csv` file in the same directory?
 
+<details>
+<summary>Possible Solution for Task 1</summary>
+
+```python
+import csv
+
+# In your main() (or wherever you build the data):
+headlines = []
+
+# Comment out/remove the old hard-coded headlines list.
+```
+
+</details>
+
 ---
 
-## **Step 2: Open and Read the File**
+## Task 2: Open and Read the File
 
 ### **Tasks**
 1. Open the CSV file using the `with` statement
@@ -81,9 +100,24 @@ The aim of this lab is to modify our program to read headlines from the `headlin
 - Is there a loop set up to process the data?
 - Does the file close automatically?
 
+<details>
+<summary>Possible Solution for Task 2</summary>
+
+```python
+with open("headlines.csv", "r", newline="", encoding="utf-8") as f:
+    reader = csv.reader(f)
+    next(reader)  # skip header
+
+    for row in reader:
+        # row is a list like: [headline_text, source_name]
+        pass
+```
+
+</details>
+
 ---
 
-## **Step 3: Create Objects from File Data**
+## Task 3: Create Objects from File Data
 
 ### **Tasks**
 1. Extract text and source from each row
@@ -113,9 +147,44 @@ The aim of this lab is to modify our program to read headlines from the `headlin
 - Does your analysis code still work with the loaded data?
 - Is the data being read from the file instead of hard-coded?
 
+<details>
+<summary>Possible Solution for Task 3</summary>
+
+```python
+for row in reader:
+    headline_text = row[0]
+    source_name = row[1]
+    headlines.append(Headline(headline_text, source_name))
+```
+
+</details>
+
 ---
 
-## **Common Issues to Watch Out For**
+## Example Interaction
+
+```
+Loaded 10 headlines from headlines.csv
+Average headline word count: ...
+```
+
+---
+
+**You're done when** your program reads `headlines.csv`, converts rows into `Headline` objects, and the rest of your analysis runs using the loaded data (no more hard-coded headlines list).
+
+---
+
+## Key Concepts Demonstrated
+
+- File I/O with `with open(...)`
+- Using the `csv` module (`csv.reader`)
+- Skipping headers with `next(...)`
+- Creating objects from file data (transforming strings into `Headline` objects)
+- Keeping data loading separate from analysis logic
+
+---
+
+## Common Issues
 
 ### **File Operations**
 - **Wrong file path**: Make sure the CSV file is in the right location
@@ -250,6 +319,11 @@ File I/O is used everywhere in Python:
 - **Reusable functions**: Create functions for common file operations
 - **Clear naming**: Use descriptive variable and function names
 - **Documentation**: Explain file format and processing logic
+
+---
+
+## Next Steps
+If you want to extend this lab, try adding `try...except` around file opening/parsing and validate the CSV row structure before creating `Headline` objects.
 
 ---
 
