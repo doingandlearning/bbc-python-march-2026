@@ -1,8 +1,13 @@
 user_input = input("Enter your password: ")
 password = "password123"
+attempts_tried = 1
 
-while user_input != password:
+while user_input != password and attempts_tried < 3:
   print("Invalid password")
-  user_input = input("Enter your password: ")  
+  user_input = input("Enter your password: ") 
+  attempts_tried += 1
 
-print("here are you secret documents")
+if attempts_tried < 3:
+  print("here are you secret documents")
+else:
+  print("Exiting program. Failed authenication.")
