@@ -9,6 +9,10 @@ def print_message_with_top_and_bottom_dividers(message, divider="=", divider_len
   print(message)
   print(divider * divider_length)
 
+
+
 print_message_with_top_and_bottom_dividers(divider="*", message="Hello from line 6", divider_length=30)  
 print_message_with_top_and_bottom_dividers("Python is cool!", "-")  
-print_message_with_top_and_bottom_dividers("🐍🐍🐍🐍🐍", divider_length=10)  
+print_message_with_top_and_bottom_dividers("🐍🐍🐍🐍🐍", divider_length=10)
+
+# Domain Driven Design
