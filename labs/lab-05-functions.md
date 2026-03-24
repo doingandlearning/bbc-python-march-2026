@@ -173,7 +173,10 @@ def find_headlines_with_keyword(list_of_headlines, keyword):
 
 ```python
 def analyse_all_headlines(list_of_headlines):
-    total_words = sum(get_word_count(h) for h in list_of_headlines)
+    total_words = 0
+    for headline in list_of_headlines:
+        total_words += get_word_count(headline)
+
     avg = total_words / len(list_of_headlines)
     print(f"Average headline word count: {avg:.1f}")
 ```
