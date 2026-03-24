@@ -31,3 +31,9 @@ for key, value in person.items():  # unpacking
 
 print(person.setdefault("birth_place", "Belfast"))
 print(person)
+
+data = {
+  (57, 0): {},
+  1: 2,
+  "string": []
+}
