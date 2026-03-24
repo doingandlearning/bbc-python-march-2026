@@ -321,7 +321,7 @@ Detector B (2026-03-03): avg=204.7, max=210, range=11
 
 - **Stats return `None` unexpectedly**: Check that you actually called `add_result(...)` before computing stats.
 - **`AttributeError` for new method**: Confirm the method is indented inside the class.
-- **Class not found**: Use the starter code section if you don’t have your class from class.
+- **Class not found**: Make sure the class is defined above the code that creates `ResultValue(...)` objects.
 - **Unreadable report output**: Compute values first, then format one clear print line.
 
 ---
