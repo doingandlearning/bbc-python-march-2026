@@ -30,31 +30,32 @@ Most beginners only need this:
 git add .
 git commit -m "Your message"
 git push
-````
+```
 
 ---
 
-## Watch: Quick Mental Model (5 mins)
+## Watch: Quick mental model (a few minutes)
 
-This gives you a simple understanding of *what Git is doing*.
+These give you a simple picture of *what Git is doing*.
 
----
-
-## Watch: Practical Walkthrough (Follow Along)
-
-This shows how to:
-
-* create a repo
-* make commits
-* push to GitHub
-
-Try to follow along on your own machine.
+* [Git Explained in 100 Seconds](https://www.youtube.com/watch?v=hwP7WQkmECE) (Fireship) — very fast overview of commits, branches, and merging.
 
 ---
 
-## Optional: Slower, Step-by-Step Guide
+## Watch: Practical walkthrough (follow along)
 
-Good if you want a more gradual explanation.
+These show how to create a repo, commit, and work with GitHub. Try to follow along on your own machine.
+
+* [How to create your first GitHub repository: A beginner's guide](https://www.youtube.com/watch?v=-RZ03WHqkaY) (GitHub) — repos, licences, `.gitignore`, and basics on the site.
+* [How to add code to your repository](https://www.youtube.com/watch?v=g2XjJhrGGg4) (GitHub) — clone, branch, commit, pull request, merge (GitHub Flow).
+
+---
+
+## Optional: slower, step-by-step guide
+
+Good if you want a longer, more gradual explanation.
+
+* [Git and GitHub crash course for beginners](https://www.youtube.com/watch?v=l2yrJtwoC_E) (long-form walkthrough with chapters in the description).
 
 ---
 
