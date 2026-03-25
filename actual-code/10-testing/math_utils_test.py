@@ -59,5 +59,5 @@ def test_add_raises_error_when_passed_two_strings():
   ({}, [])
   ])
 def test_add_raises_typeerror_when_trying_to_add_non_numbers(val1, val2):
-  with pytest.raises(TypeError):
+  with pytest.raises(TypeError):  # assert that this throws this error
     add(val1, val2)
