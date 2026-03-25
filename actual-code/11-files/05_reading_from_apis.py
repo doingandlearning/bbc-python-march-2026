@@ -15,11 +15,12 @@ data = response.json()
 planets = data.get("results")
 
 with open("star_wars_planets.csv", mode="w") as file:
-  writer = csv.DictWriter(file, fieldnames=["name", "rotation_period", "climate"])
+  writer = csv.DictWriter(file, fieldnames=["name", "rotation_period", "climate", "orbital_period"], extrasaction="ignore")
   writer.writeheader()
+
   for p in planets:
-    writer.writerow({
-      "name": p.get('name'),
-      "rotation_period": p.get('rotation_period'),
-      "climate": p.get("climate")
-    })
+      writer.writerow({
+        "name": p.get('name'),
+        "rotation_period": p.get('rotation_period'),
+        "climate": p.get("climate")
+      })
