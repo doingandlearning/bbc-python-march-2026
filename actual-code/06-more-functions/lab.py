@@ -21,8 +21,11 @@ keywords = ["tax", "stock"]
 
 tax_stock_headlines = [
   h for h in headlines
-  if any(k in h.lower() for k in keywords)
+  if any(k in h.lower() for k in keywords)  # vs all
 ]
+
+# [False, False]
+# [True, False]
 
 print(tax_stock_headlines)
 
